@@ -14,12 +14,13 @@
 
 </head>
 
-<body class="bg-[#F4F5F7]  h-[100vh]">
+<body class="bg-[#F4F5F7]  ">
+    <!-- payoo dasboard -->
     <div class="max-w-lg mx-auto flex justify-between items-center border-b-1 border-gray-400 p-4">
         <div class="flex justify-center items-center">
             <span><img src="./assets/Group.png" alt=""></span>
             <div>
-                <h2 class="font-extrabold text-sm ">$ <span>450000</span></h2>
+                <h2 class="font-extrabold text-sm ">$<span id="available-balance">450000</span></h2>
                 <p class="text-[#08080880]">Available Balance</p>
             </div>
         </div>
@@ -69,6 +70,52 @@
             </div>
         </div>
     </div>
+
+    <div class="all-form-section max-w-lg mx-auto p-8">
+        <!-- add money -->
+        <div class=" ">
+            <h1 class="mb-3 font-semibold text-sm">Add Money</h1>
+            <form action="" class="bg-white p-8 rounded-2xl">
+                <div>
+                    <h2 class="font-medium text-[#080808B3]">Select A Bank</h2>
+                    <select id="bank" class="select bg-[#F4F5F7] my-3 w-full rounded-[30px] text-gray-600">
+                        <option disabled selected>Select bank</option>
+                        <option>AB Bank</option>
+                        <option>Asia Bank</option>
+                        <option>Sonali Bank</option>
+                        <option>Trust Bank</option>
+                        <option>UCB Bank</option>
+                        <option>Dutch Bangla Bank</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="font-medium text-[#080808B3]" for="">Bank Account Number</label>
+                    <br>
+                    <input id="account-number" type="text" placeholder="Enter 13 digit account number"
+                        class="input bg-[#F4F5F7] w-full  my-3 rounded-[30px]" />
+                </div>
+
+                <div>
+                    <label class="font-medium text-[#080808B3]" for="">Amount to Add</label>
+                    <br>
+                    <input id="add-amount" type="text" placeholder="Add Amount to withdraw"
+                        class="input bg-[#F4F5F7] w-full my-3 rounded-[30px]" />
+                </div>
+
+                <div>
+                    <label class="font-medium text-[#080808B3]" for="">Pin Number</label>
+                    <br>
+                    <input id="add-pin" type="text" placeholder="Enter 4 Digit Pin Number"
+                        class="input bg-[#F4F5F7] w-full mt-3 rounded-[30px]" />
+                </div>
+                <button id="btn-add-money"
+                    class="btn bg-[#0874F2] mt-3 w-full font-semibold text-sm text-white rounded-[32px] ">Add
+                    Money</button>
+            </form>
+        </div>
+    </div>
+    <script src="./home.js"></script>
 </body>
 
 </html>
