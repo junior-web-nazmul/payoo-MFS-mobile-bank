@@ -38,6 +38,7 @@ document
   });
 
 //--------------------------cash out--------------------------
+
 document.getElementById("btn-withdraw").addEventListener("click", function (e) {
   e.preventDefault();
   const agentNumber = document.getElementById("agent-number").value;
@@ -50,7 +51,7 @@ document.getElementById("btn-withdraw").addEventListener("click", function (e) {
   );
 
   if (agentNumber.length !== 11) {
-    alert("please provide valid number");
+    alert("please provide valid account number");
     return;
   }
   if (!withdrawAmount || isNaN(withdrawAmount) || withdrawAmount <= 0) {
@@ -66,18 +67,60 @@ document.getElementById("btn-withdraw").addEventListener("click", function (e) {
   document.getElementById("available-balance").innerText = totalAvaiableBalance;
 });
 
-//   toggling feature
+//----------------Transfer money-----------------
 
+document.getElementById("btn-send-now").addEventListener("click", function (e) {
+  e.preventDefault();
+  const transferNumber = document.getElementById("transfer-number").value;
+  const transferAmount = parseInt(
+    document.getElementById("transfer-amount").value,
+  );
+  const transferPin = parseInt(document.getElementById("transfer-pin").value);
+
+  const availableBalance = parseInt(
+    document.getElementById("available-balance").innerText,
+  );
+  if (transferNumber.length !== 11) {
+    alert("please provide valid account number");
+    return;
+  }
+  if (!transferAmount || isNaN(transferAmount) || transferAmount <= 0) {
+    alert("Enter your transfer amount");
+    return;
+  }
+  if (transferPin !== validPin) {
+    alert("Please Provide valid pin");
+    return;
+  }
+
+  const totalNewAvaiableBalance = availableBalance - transferAmount;
+  document.getElementById("available-balance").innerText =
+    totalNewAvaiableBalance;
+});
+
+//   toggling feature
+//add money click
 document
   .getElementById("add-money-parent")
   .addEventListener("click", function () {
     document.getElementById("cashout-container").style.display = "none";
+    document.getElementById("transfer-container").style.display = "none";
     document.getElementById("add-money-container").style.display = "block";
   });
-
+//cashout click
 document
   .getElementById("cashout-parent")
   .addEventListener("click", function () {
     document.getElementById("add-money-container").style.display = "none";
+    document.getElementById("transfer-container").style.display = "none";
     document.getElementById("cashout-container").style.display = "block";
+  });
+
+//transfer click
+document
+  .getElementById("transfer-parent")
+  .addEventListener("click", function () {
+    document.getElementById("add-money-container").style.display = "none";
+    document.getElementById("cashout-container").style.display = "none";
+    document.getElementById("transfer-container").style.display = "block";
   });

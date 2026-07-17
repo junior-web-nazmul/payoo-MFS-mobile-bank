@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
     <!-- fontawosome cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <!-- daisy ui CDN -->
@@ -44,26 +44,32 @@
         </div>
 
         <div class="mt-8 grid grid-cols-3 grid-rows-2 gap-4">
+            <!-- add money -->
             <div id="add-money-parent" class=" cursor-pointer border-2 border-gray-200  rounded-lg p-3">
                 <img src="./assets/wallet1.png" class="mx-auto" alt="">
                 <h2 class="text-center">Add Money</h2>
             </div>
+            <!-- cashout -->
             <div id="cashout-parent" class="border-2 border-gray-200  rounded-lg p-3">
                 <img src="./assets/send1.png" class="mx-auto" alt="">
                 <h2 class="text-center">Cash Out</h2>
             </div>
-            <div class="border-2 border-gray-200  rounded-lg p-3">
+            <!-- transfer -->
+            <div id="transfer-parent" class="border-2 border-gray-200  rounded-lg p-3">
                 <img src="./assets/money1.png" class="mx-auto" alt="">
                 <h2 class="text-center">Transfer Money</h2>
             </div>
+            <!-- get bouns -->
             <div class="border-2 border-gray-200  rounded-lg p-3">
                 <img src="./assets/bonus1.png" class="mx-auto" alt="">
                 <h2 class="text-center">Get Bonus</h2>
             </div>
+            <!-- pay bill -->
             <div class="border-2 border-gray-200  rounded-lg p-3">
                 <img src="./assets/purse1.png" class="mx-auto" alt="">
                 <h2 class="text-center">Pay Bill</h2>
             </div>
+            <!-- transaction -->
             <div class="border-2 border-gray-200  rounded-lg p-3">
                 <img src="./assets/transaction1.png" class="mx-auto" alt="">
                 <h2 class="text-center">Transaction</h2>
@@ -115,7 +121,7 @@
             </form>
         </div>
         <!-- cashout -->
-        <div id="cashout-container">
+        <div id="cashout-container" style="display: none;">
             <h1 class="mb-3 font-semibold text-sm">Cash Out</h1>
             <form action="" class="bg-white p-8 rounded-2xl">
                 <div>
@@ -141,6 +147,35 @@
                 <button id="btn-withdraw"
                     class="btn bg-[#0874F2] mt-3 w-full font-semibold text-sm text-white rounded-[32px] ">Withdraw
                     Money</button>
+            </form>
+        </div>
+        <!-- transfer money -->
+        <div id="transfer-container" style="display: none;">
+            <h1 class="mb-3 font-semibold text-sm">Transfer Money</h1>
+            <form action="" class="bg-white p-8 rounded-2xl">
+                <div>
+                    <label class="font-medium text-[#080808B3]" for="">User Account Number</label>
+                    <br>
+                    <input id="transfer-number" type="text" placeholder="Enter 11 digit account number"
+                        class="input bg-[#F4F5F7] w-full  my-3 rounded-[30px]" />
+                </div>
+
+                <div>
+                    <label class="font-medium text-[#080808B3]" for="">Amount</label>
+                    <br>
+                    <input id="transfer-amount" type="text" placeholder="Enter amount to withdraw"
+                        class="input bg-[#F4F5F7] w-full my-3 rounded-[30px]" />
+                </div>
+
+                <div>
+                    <label class="font-medium text-[#080808B3]" for="">Pin Number</label>
+                    <br>
+                    <input id="transfer-pin" type="text" placeholder="Enter 4 Digit Pin Number"
+                        class="input bg-[#F4F5F7] w-full mt-3 rounded-[30px]" />
+                </div>
+                <button id="btn-send-now"
+                    class="btn bg-[#0874F2] mt-3 w-full font-semibold text-sm text-white rounded-[32px] ">Send
+                    Now</button>
             </form>
         </div>
     </div>
