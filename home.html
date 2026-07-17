@@ -44,11 +44,11 @@
         </div>
 
         <div class="mt-8 grid grid-cols-3 grid-rows-2 gap-4">
-            <div class="border-2 border-gray-200  rounded-lg p-3">
+            <div id="add-money-parent" class="border-2 border-gray-200  rounded-lg p-3">
                 <img src="./assets/wallet1.png" class="mx-auto" alt="">
                 <h2 class="text-center">Add Money</h2>
             </div>
-            <div class="border-2 border-gray-200  rounded-lg p-3">
+            <div id="cashout-parent" class="border-2 border-gray-200  rounded-lg p-3">
                 <img src="./assets/send1.png" class="mx-auto" alt="">
                 <h2 class="text-center">Cash Out</h2>
             </div>
@@ -73,7 +73,7 @@
 
     <div class="all-form-section max-w-lg mx-auto p-8">
         <!-- add money -->
-        <div class=" ">
+        <div id="add-money-container" style="display: none;">
             <h1 class="mb-3 font-semibold text-sm">Add Money</h1>
             <form action="" class="bg-white p-8 rounded-2xl">
                 <div>
@@ -109,10 +109,14 @@
                     <input id="add-pin" type="text" placeholder="Enter 4 Digit Pin Number"
                         class="input bg-[#F4F5F7] w-full mt-3 rounded-[30px]" />
                 </div>
-                <button id="btn-add-money"
+                <button id="btn-add"
                     class="btn bg-[#0874F2] mt-3 w-full font-semibold text-sm text-white rounded-[32px] ">Add
                     Money</button>
             </form>
+        </div>
+
+        <div id="cashout-container">
+            <h1 class="mb-3 font-semibold text-sm">Cash Out</h1>
         </div>
     </div>
     <script src="./home.js"></script>
